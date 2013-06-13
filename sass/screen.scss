@@ -1,0 +1,50 @@
+@import "compass/utilities/general/clearfix";
+
+body {
+    width: 760px;
+    margin: 20px auto;
+    font-family: sans-serif;
+}
+.group {
+    @include clearfix;
+    margin: 20px 0;
+    .col {
+        width: 50%;
+        float: left;
+    }
+}
+
+$iconColor: random_color();
+$iconBorderColor: adjust_hue($iconColor, 60);
+$iconBorderWidth: 5;
+
+.icon-home {
+    background-image: inline-image('home.svg');
+}
+
+.icon {
+    display: inline-block;
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 96px;
+    height: 96px;
+}
+.icon-small {
+    width: 48px;
+    height: 48px;
+}
+.icon-large {
+    width: 256px;
+    height: 256px;
+}
+.icon-home-var {
+    background-image: url('data:image/svg+xml; charset=utf-8; base64,'
+        + base64_encode('<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+            <svg viewBox="0 0 239 217" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="g1" stroke="none" stroke-width="' + $iconBorderWidth + '" fill="none" fill-rule="evenodd">
+                    <path d="M119.5,0 L238.857593,82.5724692 L193.267049,216.177531 L45.7329508,216.177531 L0.142407205,82.5724692 L119.5,0 Z M119.5,0" id="polygon" stroke="' + $iconBorderColor + '" fill="' + $iconColor + '"></path>
+                    <path d="M119.5,181.5 C153.741656,181.5 181.5,153.741656 181.5,119.5 C181.5,85.2583438 153.741656,57.5 119.5,57.5 C85.2583438,57.5 57.5,85.2583438 57.5,119.5 C57.5,153.741656 85.2583438,181.5 119.5,181.5 Z M119.5,181.5" id="circle" stroke="' + $iconBorderColor + '" fill="#FFFFFF"></path>
+                </g>
+            </svg>'));
+}
